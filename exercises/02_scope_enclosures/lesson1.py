@@ -2,11 +2,11 @@
 funcs = []
 for i in range(3):
 
-    def f():
+    def f(z=i):
 
-        return i * 10
+        return z * 10
 
-    funcs.append(i * 10)
+    funcs.append(f)
 
 i = 100
-print(funcs)
+print([g() for g in funcs])

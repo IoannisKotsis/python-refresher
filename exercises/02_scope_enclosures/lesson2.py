@@ -1,13 +1,14 @@
 # 2.2 (alternative)
-funcs = []
-
-
-def f():
+def make_f(n):
     def adding():
-        for i in range(3):
-            funcs.append(i * 10)
+        return n * 10
 
-    return funcs
+    return adding
 
 
-f()
+funcs = []
+for i in range(3):
+    funcs.append(make_f(i))
+
+i = 100
+print([g() for g in funcs])

@@ -1,8 +1,13 @@
-def make_counter(n):
+def make_counter():
+    n = 0
+
     def inner():
-        return n + 1
+        nonlocal n
+        n += 1
+        return n
 
-    print(inner())
+    return inner
 
 
-make_counter(3)
+c = make_counter()
+print(c(), c(), c())
